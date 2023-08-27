@@ -5,10 +5,17 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body  
-    div(class='main-container') 
-      img(src='/images/logo.png', alt='beatiful and humerous logo', width='100', height='100')
-      ul(class='nav')
-        if all_categories && all_categories.length > 0
-          each category in all_categories 
-            li #{category.name}
-      block content
+    section(class='top-bar')
+      img(class='logo', src='/images/logo.png', alt='beatiful and humerous logo', width='170', height='80')
+      nav(class='nav-bar')
+        div(class='nav-item first') Shop
+        div(class='nav-item') Create Category 
+        div(class='nav-item last') List Item
+        div(class='nav-item filler') Secret
+    section(class='content')
+      div(class='text-and-button')
+        h1(class='headline') A CRUD Shopping Experience Made By The People For The People
+        h4(class='explanation') An online shopping experience that allows for the users to create the store themselves.
+        button(class='to-shop') Shop Now
+      img(class='content-image' src='/images/basket.png', alt='Green Sign', width='420', height='350')
+    block content
