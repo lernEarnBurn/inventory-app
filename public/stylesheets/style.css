@@ -1,8 +1,8 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(211, 209, 209);
+  font-family: helvetica;
 }
 
 .logo {
@@ -27,6 +27,9 @@ body {
   font-size: 1.3vw;
   font-weight: 500;
   height:4vh;
+  text-decoration: none;
+  color:inherit;
+  cursor: pointer;
 }
 
 .first {
@@ -39,7 +42,6 @@ body {
 
 .filler {
   border-left: 1px solid rgba(0, 0, 0, 0.35);
-
 }
 
 .content {
@@ -68,6 +70,7 @@ button {
   background-color: #00BEFF;
   border-radius:.6vh;
   padding: 1vh 1vw;
+  cursor: pointer;
 }
 
 .to-shop {
