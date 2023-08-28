@@ -46,7 +46,7 @@ body {
 
 .content {
   margin-left: 9vw;
-  margin-top: 8vh;
+  margin-top: 9vh;
   height: 69.83vh;
   width: auto;
   display: flex;
@@ -62,6 +62,8 @@ body {
   font-size: 1.4vw;
   width: 31vw;
   font-weight: 500;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 button {
@@ -71,6 +73,10 @@ button {
   border-radius:.6vh;
   padding: 1vh 1vw;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #2FA8E1;
 }
 
 .to-shop {
