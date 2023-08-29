@@ -1,0 +1,15 @@
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body  
+    section(class='top-bar')
+      img(class='logo', src='/images/logo.png', alt='beatiful and humerous logo', width='170', height='80')
+      nav(class='nav-bar')
+        a(class='nav-item first', href='/shop') Shop
+        a(class='nav-item', href='/create-category') Create Category 
+        a(class='nav-item last', href='/create-item') List Item
+        a(class='nav-item filler') Secret
+    block content
