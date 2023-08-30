@@ -15,6 +15,8 @@ router.get('/home', function(req, res, next) {
 
 router.get('/shop', categoryController.getAllCategories)
 
+router.get('/home/shop/:name', categoryController.getCategory)
+
 router.get('/create-category', function(req, res, next){
   res.render('createCategory')
 })
@@ -22,5 +24,7 @@ router.get('/create-category', function(req, res, next){
 router.get('/create-item', function(req, res, next) {
   res.render('createItem')
 })
+
+
 
 module.exports = router;

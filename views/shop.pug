@@ -2,4 +2,4 @@ extends layout.pug
 block content
   ul
   each category in allCategories 
-    li #{category.name}
+    a(href=category.url) #{category.name}

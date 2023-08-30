@@ -9,7 +9,7 @@ const CategorySchema = new Schema({
 
 
 CategorySchema.virtual('url').get(function () {
-    return `/home/category/${this.id}`
+    return `/home/shop/${this.name}`
 })
 
 module.exports = mongoose.model("Category", CategorySchema)
