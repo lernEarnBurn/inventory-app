@@ -13,7 +13,7 @@ const ItemSchema = new Schema({
 
 
 ItemSchema.virtual('url').get(function () {
-    return `/home/item/${this.id}`
+    return `/home/shop/item/${this.id}`
 })
 
 ItemSchema.virtual('priceString').get(function () {

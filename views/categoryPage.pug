@@ -6,5 +6,6 @@ block content
     
     ul
     each item in categoryItems  
-      li #{item.name}
+      li 
+        a(href=item.url) #{item.name}
   
