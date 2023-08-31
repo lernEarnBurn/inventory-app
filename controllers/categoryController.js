@@ -1,4 +1,5 @@
 const Category = require('../models/category.js')
+const Item = require('../models/item.js')
 
 const { body, validationResult } = require("express-validator")
 const asyncHandler = require("express-async-handler")
@@ -9,6 +10,7 @@ exports.getAllCategories = asyncHandler(async (req, res, next) => {
 })
 
 exports.getCategory = asyncHandler(async (req, res, next) => {
-    const category = await Category.find({name: req.params.name}).exec()
-    res.render('categoryPage', {categoryData: category})
+    const categoryData = await Category.find({name: req.params.name}).exec()
+    const categoryItems = await Item.find({category: {$in: categoryData[0].id}}).sort({name: 1}).exec()
+    res.render('categoryPage', {categoryData: categoryData, categoryItems: categoryItems})
 })

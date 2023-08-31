@@ -3,8 +3,8 @@ block content
   section(class='items')
     p #{categoryData[0].name}
     p #{categoryData[0].description}
-    script. 
-        console.log(categoryData.name)
-  
-
+    
+    ul
+    each item in categoryItems  
+      li #{item.name}
   
