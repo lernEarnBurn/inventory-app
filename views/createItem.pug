@@ -1,1 +1,47 @@
 extends layout.pug
+block content 
+  h1 Create item
+  form(method='post', action='/create-item')
+    label(for='name') Name:
+    input(name='name', type='text', required='true', value=(undefined==item ? '' : item.name))
+    label(for='description') Description: 
+    textarea(cols="30", rows="10", class='description' name='description', type='text', required='true', value=(undefined==item ? '' : item.description))
+    label(for='categories') Select Item Categories:
+    input(type='hidden', name='categories', value='', id='selectedCategoriesInput')
+    div(class='category-select-container')
+      for category in allCategories
+        div(class='category-select') #{category.name}
+      script. 
+        const selectedCategories = []
+
+        function toggleSelected(event){
+          if(event.target.classList.contains('selected')){
+            event.target.classList.remove('selected')
+            const index = selectedCategories.indexOf(event.target.textContent);
+            if (index !== -1) {
+              selectedCategories.splice(index, 1);
+            }
+          }else{
+            event.target.classList.add('selected')
+            selectedCategories.push(event.target.textContent)
+          }
+
+          const selectedCategoriesJSON = JSON.stringify(selectedCategories);
+          selectedCategoriesInput.value = selectedCategoriesJSON;
+        }
+
+        const allCategorySelects = document.querySelectorAll('.category-select')
+        allCategorySelects.forEach((category) => {
+          category.addEventListener('click', toggleSelected)
+        })
+
+    label(for='price') Price: 
+    input(type='number', name='price', value=(undefined==item ? '' : item.price))
+    label(for='inStock') Quantity In Stock: 
+    input(type='number', name='inStock', value=(undefined==item ? '' : item.inStock))
+    button(type='submit') Submit
+  
+  if errors
+    ul
+      for error in errors
+        li!= error.msg

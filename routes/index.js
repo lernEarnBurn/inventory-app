@@ -26,6 +26,8 @@ router.post('/create-category', categoryController.createCategory)
 
 router.get('/create-item', itemController.getCreateItem)
 
+router.post('/create-item', itemController.createItem)
+
 
 
 module.exports = router;
