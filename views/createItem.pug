@@ -1,13 +1,16 @@
 extends layout.pug
 block content 
-  h1 Create item
-  form(method='post', action='/create-item')
-    label(for='name') Name:
-    input(name='name', type='text', required='true', value=(undefined==item ? '' : item.name))
-    label(for='description') Description: 
-    textarea(cols="30", rows="10", class='description' name='description', type='text', required='true', value=(undefined==item ? '' : item.description))
-    label(for='categories') Select Item Categories:
-    input(type='hidden', name='categories', value='', id='selectedCategoriesInput')
+  h1(class='form-heading') Create item
+  form(method='post', action='/create-item', class='item-form')
+    div(class='form-field')
+      label(for='name') Name:
+      input(name='name', type='text', required='true', value=(undefined==item ? '' : item.name))
+    div(class='form-field')
+      label(for='description') Description: 
+      textarea(cols="30", rows="4", class='description' name='description', type='text', required='true', value=(undefined==item ? '' : item.description))
+    div(class='form-field')
+      input(type='hidden', name='categories', value='', id='selectedCategoriesInput')
+      label(for='categories', class='select-label') Select Item Categories:
     div(class='category-select-container')
       for category in allCategories
         div(class='category-select') #{category.name}
@@ -34,12 +37,13 @@ block content
         allCategorySelects.forEach((category) => {
           category.addEventListener('click', toggleSelected)
         })
-
-    label(for='price') Price: 
-    input(type='number', name='price', value=(undefined==item ? '' : item.price))
-    label(for='inStock') Quantity In Stock: 
-    input(type='number', name='inStock', value=(undefined==item ? '' : item.inStock))
-    button(type='submit') Submit
+    div(class='form-field')
+      label(for='price') Price: 
+      input(type='number', name='price', value=(undefined==item ? '' : item.price), required='true')
+    div(class='form-field')
+      label(for='inStock') Quantity In Stock: 
+      input(type='number', name='inStock', value=(undefined==item ? '' : item.inStock), required='true')
+    button(type='submit', class='submit') Submit
   
   if errors
     ul

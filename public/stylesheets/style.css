@@ -5,6 +5,7 @@ body {
   font-family: helvetica;
 }
 
+
 .logo {
   margin-left: 8vw;
   margin-top: 1.6vh;
@@ -90,3 +91,83 @@ button:hover {
 .content-image {
   margin-left: 16vw;
 }
+
+form {
+  display:flex;
+  flex-direction: column;
+  gap:1vh;
+  width: 45vw;
+  margin:auto;
+  background-color: #107a531e;
+  padding:2vh 1vw;
+  border-radius: .5vh;
+}
+
+
+.category-select-container {
+  display: flex;
+  gap: 1vw;
+}
+
+.category-select {
+  background-color: #107a53;
+  color: white;
+  padding: 1vh 1vw;
+  border-radius: .5vh;
+  cursor: pointer;
+}
+
+.category-select:not(.selected):hover {
+  background-color: #107a5394;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color:#107a53;
+ 
+  font-size: 5vh;
+}
+
+.selected {
+  background-color:#0ca847;
+}
+
+label {
+  font-weight: 300;
+  font-size: smaller;
+}
+
+textarea {
+  border-radius: .4vh;
+  resize: vertical;
+  max-height: 18vh;
+  min-height:5vh;
+  border: 1px solid #ccc;
+}
+
+.select-label {
+  margin-bottom: -.8vh;
+}
+
+input {
+  height: 5vh;
+  border-radius: .4vh;
+  border: 1px solid #ccc;
+}
+
+.form-heading {
+  text-align: center;
+}
+
+.submit {
+  margin-top: 1vh;
+  font-size: 2vh;
+  height: 6vh;
+}
+
+ 
+

@@ -1,12 +1,14 @@
 extends layout.pug
 block content 
-  h1 Create Category
+  h1(class='form-heading') Create Category
   form(method='post', action='/create-category')
-    label(for='name') Name:
-    input(name='name', type='text', required='true', value=(undefined===category ? '' : category.name))
-    label(for='description') Description: 
-    textarea(cols="30", rows="10", class='description' name='description', type='text', required='true', value=(undefined===category ? '' : category.description))
-    button(type='submit') Submit
+    div(class='form-field')
+      label(for='name') Name:
+      input(name='name', type='text', required='true', value=(undefined===category ? '' : category.name))
+    div(class='form-field')
+      label(for='description') Description: 
+      textarea(cols="30", rows="4", class='description' name='description', type='text', required='true', value=(undefined===category ? '' : category.description))
+    button(type='submit', class='submit') Submit
 
   if errors
     ul
