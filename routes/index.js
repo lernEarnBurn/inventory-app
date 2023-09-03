@@ -20,13 +20,11 @@ router.get('/home/shop/:name', categoryController.getCategory)
 
 router.get('/home/shop/item/:id', itemController.getItem)
 
-router.get('/create-category', function(req, res, next){
-  res.render('createCategory')
-})
+router.get('/create-category', categoryController.getCategoryCreate)
 
-router.get('/create-item', function(req, res, next) {
-  res.render('createItem')
-})
+router.post('/create-category', categoryController.createCategory)
+
+router.get('/create-item', itemController.getCreateItem)
 
 
 
