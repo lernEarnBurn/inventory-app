@@ -1,5 +1,29 @@
 extends layout.pug
 block content
-  ul
-  each category in allCategories 
-    a(href=category.url) #{category.name}
+  section(class='shop-page')
+    div(class='scroll-left') 
+    div(class='slider')
+      each category in allCategories 
+        a(href=category.url) 
+          div(class='category-container') #{category.name}
+    div(class='scroll-right') 
+
+  script. 
+    const scrollLeftButton = document.querySelector('.scroll-left');
+    const scrollRightButton = document.querySelector('.scroll-right');
+    const slider = document.querySelector('.slider');
+
+    scrollLeftButton.addEventListener('mouseover', () => {
+      slider.scrollBy({
+        left: -600,  
+        behavior: 'smooth', 
+      });
+    });
+
+    scrollRightButton.addEventListener('mouseover', () => {
+      slider.scrollBy({
+        left: 600,  
+        behavior: 'smooth',  
+      });
+    });
+  
