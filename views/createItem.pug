@@ -7,14 +7,36 @@ block content
       input(name='name', type='text', required='true', value=(undefined==item ? '' : item.name))
     div(class='form-field')
       label(for='description') Description: 
-      textarea(cols="30", rows="4", class='description' name='description', type='text', required='true', value=(undefined==item ? '' : item.description))
+      textarea(cols="30", rows="3", class='description' name='description', type='text', required='true', value=(undefined==item ? '' : item.description))
     div(class='form-field')
       input(type='hidden', name='categories', value='', id='selectedCategoriesInput')
       label(for='categories', class='select-label') Select Item Categories:
     div(class='category-select-container')
+      div(class='left')
       for category in allCategories
         div(class='category-select') #{category.name}
+      div(class='right')
       script. 
+        //slider for categories
+        const scrollLeft = document.querySelector('.left');
+        const scrollRight = document.querySelector('.right');
+        const slider = document.querySelector('.category-select-container');
+
+        scrollLeft.addEventListener('mouseover', () => {
+          slider.scrollBy({
+            left: -200,  
+            behavior: 'smooth', 
+          });
+        });
+
+        scrollRight.addEventListener('mouseover', () => {
+          slider.scrollBy({
+            left: 200,  
+            behavior: 'smooth',  
+          });
+        });
+
+        //category selection logic
         const selectedCategories = []
 
         function toggleSelected(event){

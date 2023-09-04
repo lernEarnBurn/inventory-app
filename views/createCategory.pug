@@ -7,7 +7,7 @@ block content
       input(name='name', type='text', required='true', value=(undefined===category ? '' : category.name))
     div(class='form-field')
       label(for='description') Description: 
-      textarea(cols="30", rows="4", class='description' name='description', type='text', required='true', value=(undefined===category ? '' : category.description))
+      textarea(cols="30", rows="6", class='description' name='description', type='text', required='true', value=(undefined===category ? '' : category.description))
     button(type='submit', class='submit') Submit
 
   if errors

@@ -9,18 +9,18 @@ block content
     div(class='scroll-right') 
 
   script. 
-    const scrollLeftButton = document.querySelector('.scroll-left');
-    const scrollRightButton = document.querySelector('.scroll-right');
+    const scrollLeft = document.querySelector('.scroll-left');
+    const scrollRight = document.querySelector('.scroll-right');
     const slider = document.querySelector('.slider');
 
-    scrollLeftButton.addEventListener('mouseover', () => {
+    scrollLeft.addEventListener('mouseover', () => {
       slider.scrollBy({
         left: -600,  
         behavior: 'smooth', 
       });
     });
 
-    scrollRightButton.addEventListener('mouseover', () => {
+    scrollRight.addEventListener('mouseover', () => {
       slider.scrollBy({
         left: 600,  
         behavior: 'smooth',  
