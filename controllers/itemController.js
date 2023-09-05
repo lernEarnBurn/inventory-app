@@ -19,9 +19,7 @@ exports.createItem = [
     .trim()
     .isLength({ min: 1 })
     .escape()
-    .withMessage("Name must be specified.")
-    .isAlphanumeric()
-    .withMessage("First name has non-alphanumeric characters."),
+    .withMessage("Name must be specified."),
     body("description")
     .trim()
     .isLength({ min: 1 })

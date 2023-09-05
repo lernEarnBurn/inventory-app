@@ -13,7 +13,7 @@ block content
       label(for='categories', class='select-label') Select Item Categories:
     div(class='category-select-container')
       div(class='left')
-      for category in allCategories
+      each category in allCategories
         div(class='category-select') #{category.name}
       div(class='right')
       script. 
