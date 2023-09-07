@@ -1,7 +1,18 @@
 extends layout.pug
 block content 
-  p #{itemData.name}
-  p #{itemData.description}
-  p #{itemData.category}
-  p #{itemData.inStock}
-  p #{itemData.priceString}
+  section(class='item-page')
+
+  
+    img( alt='picture of item', class='item-image')
+    div(class='item-information')
+      h1(class='item-name') #{itemData.name}
+      h2(class='item-description') #{itemData.description}
+      div(class='category-link-container')
+        each category in itemData.category 
+          a(href=category.url)
+            p #{category.name}
+      div(class='bottom-info')
+        h2 #{itemData.priceString}
+        p(class='price-seperator') .
+        p #{itemData.inStock} left in stock
+      button(class='add-to-cart') Add To Cart
