@@ -34,6 +34,14 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width:1300px) {
+  .nav-item  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .first {
   border-right: 1px solid rgba(0, 0, 0, 0.35);
 }
@@ -229,16 +237,18 @@ a, li{
   right: 20;
 }
 
-.right,
-.left {
+.right, .left {
   position:absolute;
   width: 2vw;
   height: 8vh;
   top: 410;
+  border: 1px solid black;
 }
 
-/*this is absolute so add media queries here even though responsive is not a priority
-  just so it works fine on smaller screens*/
+
+
+
+
 
 .right {
   right: 385;
@@ -247,6 +257,36 @@ a, li{
 .left {
   left: 390;
 }
+
+
+@media screen and (max-width:1300px) {
+  .left {
+    left: 310;
+  }
+  
+  .right {
+    left: 900;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .right {
+    left: 845;
+  }
+}
+
+
+@media screen and (max-width: 1150px){
+  .right{
+    left: 810;
+  }
+
+  .left {
+    left: 295;
+  }
+}
+
+
 
 .items {
   display: flex;
@@ -291,11 +331,9 @@ a, li{
 }
 
 .item-details {
-  
   display: flex;
   flex-direction: column;
   color: black;
-
 }
 
 .category-info {
@@ -347,6 +385,9 @@ a, li{
   font-size: large;
 }
 
+.description {
+  resize: none;
+}
 
 .item-page {
   display: flex;

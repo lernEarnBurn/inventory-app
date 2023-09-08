@@ -10,6 +10,9 @@ var app = express();
 
 require('dotenv').config()
 
+//TODO
+//add css random paint to shop page
+//implement images
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
