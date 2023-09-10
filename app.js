@@ -11,8 +11,10 @@ var app = express();
 require('dotenv').config()
 
 //TODO
-//add css random paint to shop page
+//add css random paint to background
+//style shop categories
 //implement images
+//populate items with images
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -21,6 +23,8 @@ main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
