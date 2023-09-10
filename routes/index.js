@@ -16,9 +16,9 @@ router.get('/home', function(req, res, next) {
 
 router.get('/shop', categoryController.getAllCategories)
 
-router.get('/home/shop/:name', categoryController.getCategory)
+router.get('/shop/:name', categoryController.getCategory)
 
-router.get('/home/shop/item/:id', itemController.getItem)
+router.get('/shop/item/:id', itemController.getItem)
 
 router.get('/create-category', categoryController.getCategoryCreate)
 
