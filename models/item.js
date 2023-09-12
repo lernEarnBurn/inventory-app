@@ -8,7 +8,7 @@ const ItemSchema = new Schema({
     category: [{type: Schema.Types.ObjectId, ref: "Category", required: true}],
     price: {type: Number, required: true},
     inStock: {type: Number, required: true},
-    image: {type: Schema.Types.ObjectId, ref: "Image"}
+    image: {type: Schema.Types.ObjectId, ref: "Image", required: true}
 })
 
 

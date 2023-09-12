@@ -17,24 +17,6 @@ exports.getCreateItem = asyncHandler(async function(req, res, next){
 })
 
 
-const multer = require('multer')
-
-
-//image storage for item form
-
-const Storage = multer.diskStorage({
-  destination: "uploads",
-  filename: (req, file, cb) => {
-    cb(null, file.originalname)
-  }
-})
-
-const upload = multer({
-  storage: Storage
-}).single('testImage')
-
-
-
 exports.createItem = [
     body("name")
     .trim()
@@ -64,21 +46,16 @@ exports.createItem = [
     .withMessage("Quantity In Stock Must Be Specified"),
 
     asyncHandler(async (req, res, next) => {
-        const errors = validationResult(req)
-
-        upload(req, res, (err) => {
-            if(err){
-                console.log(err)
-            }else{
-                const newImage = new Image({
-                  name: req.body.image, 
-                  image: {
-                    data: req.file.buffer, 
-                    contentType: req.file.mimetype 
-                  }
-                })
-            }
+        const errors = validationResult(req)  
+      
+        const newImage = new Image({
+          name: req.file.originalname, 
+          image: {
+            data: req.file.buffer, 
+            contentType: req.file.mimetype 
+          }
         })
+        
 
         try {
             await newImage.save();
@@ -86,9 +63,6 @@ exports.createItem = [
           } catch (err) {
             console.error('Error saving image:', err);
           }
-
-            
-    
 
 
         const selectedCategories = JSON.parse(req.body.categories);
@@ -105,8 +79,8 @@ exports.createItem = [
             description: req.body.description,
             category: categoryArray,
             price: req.body.price,
-            inStock: req.body.inStock
-            //need to cop the image here
+            inStock: req.body.inStock,
+            image: newImage
         })
 
         if(!errors.isEmpty()){

@@ -4,8 +4,17 @@ var router = express.Router();
 const categoryController = require('../controllers/categoryController.js')
 const itemController = require('../controllers/itemController.js')
 
+const multer = require('multer')
 
-/* GET home page. */
+//image storage for item form
+const Storage = multer.memoryStorage()
+
+const upload = multer({
+  storage: Storage
+})
+
+
+
 router.get('/', function(req, res, next) {
   res.redirect('/home')
 });
@@ -26,7 +35,8 @@ router.post('/create-category', categoryController.createCategory)
 
 router.get('/create-item', itemController.getCreateItem)
 
-router.post('/create-item', itemController.createItem)
+
+router.post('/create-item', upload.single('itemImage'), itemController.createItem)
 
 
 

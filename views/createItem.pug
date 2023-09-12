@@ -66,7 +66,7 @@ block content
       label(for='inStock') Quantity In Stock: 
       input(type='number', name='inStock', value=(undefined==item ? '' : item.inStock), required='true')
     div(class='form-field image')
-      input(type='file', accept='image/*', class='hidden', name='testImage')
+      input(type='file', accept='image/*', class='hidden', name='itemImage', required='true')
     button(type='submit', class='submit') Submit
   
   if errors
