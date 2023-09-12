@@ -11,7 +11,7 @@ exports.getAllCategories = asyncHandler(async (req, res, next) => {
 
 exports.getCategory = asyncHandler(async (req, res, next) => {
     const categoryData = await Category.find({name: req.params.name}).exec()
-    const categoryItems = await Item.find({category: {$in: categoryData[0].id}}).sort({name: 1}).exec()
+    const categoryItems = await Item.find({category: {$in: categoryData[0].id}}).sort({name: 1}).populate('image').exec()
     res.render('categoryPage', {categoryData: categoryData, categoryItems: categoryItems})
 })
 
