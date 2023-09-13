@@ -11,9 +11,7 @@ var app = express();
 require('dotenv').config()
 
 //TODO
-//add css random paint to background
 //style shop categories
-//implement images
 //populate items with images
 
 const mongoose = require("mongoose");

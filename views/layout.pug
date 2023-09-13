@@ -6,7 +6,8 @@ html(lang='en')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body  
     script. 
-      CSS.paintWorklet.addModule('paintApi.js')
+      CSS.paintWorklet.addModule('/paint/paintApi.js')
+      document.documentElement.style.setProperty('--pattern-seed', Math.random() * 10000);
 
     section(class='top-bar')
       a(href='/home')
