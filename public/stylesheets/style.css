@@ -207,13 +207,17 @@ a, li{
 .category-container {
   height: 40vh;
   width: 30vw;
-  border: 1px solid black;
+  border: 2px solid black;
   display:flex;
   justify-content: center;
   align-items:center;
-  font-size: 2vw; 
+  font-size: 2.5vw; 
   background-color: white;
   color:black;
+}
+
+.category-container:hover {
+  background-color: #107a533a;
 }
 
 .scroll-left,
