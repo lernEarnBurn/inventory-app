@@ -135,6 +135,22 @@ form {
   flex-direction: column;
 }
 
+.hidden {
+  border:none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=file]::file-selector-button {
+  border: 2px solid #0ca848ae;
+  padding: .2em .4em;
+  border-radius: .2em;
+  background-color:#107a538a;
+  transition: 1s;
+  margin-left: 14.5vw;
+  margin-right: 1.5vw;
+}
+
 h1 {
   color:#107a53;
  
@@ -175,7 +191,7 @@ input {
 
 .form-heading {
   text-align: center;
-  margin-top: -1vh;
+  margin-top: -3vh;
 }
 
 .submit {
@@ -378,7 +394,7 @@ a, li{
 }
 
 .item-container:hover .price {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 
