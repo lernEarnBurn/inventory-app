@@ -1,4 +1,13 @@
-# inventory-app
-full stack javascript project. Using the classic route models, and controllers  structure. MongoDb with Mongoose (ODM)  as the database. Pug is the template engine. No cart has been implemented. Not responsive to mobile. Has image uploading with Multer. Hosted with fly.io at https://inventory-site.fly.dev
+# inventory-app (nodejs)
+
+## technologies used
+Mongodb with Mongoose as database and Pug as a template engine.
+
+## accomplishments
+The thing I'm most proud of in this project is the code organization which surpassed
+any of my last products. I also am happy with the image upload integration which was only optional on the asignment.
+
+
+ https://inventory-site.fly.dev
 
 
