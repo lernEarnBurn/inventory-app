@@ -1,4 +1,6 @@
 # inventory-app (nodejs)
+## Link
+ https://inventory-site.fly.dev
 
 ## Technologies 
 Mongodb with Mongoose as database and Pug as template engine.
@@ -26,9 +28,3 @@ on the asignment.
 + responsive for tablets and and smartphones
 + shopping cart
 + delete and edit capabilities to items on site
-
-
-## Link
- https://inventory-site.fly.dev
-
-
